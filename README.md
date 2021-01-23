@@ -64,6 +64,57 @@ Events:                   <none>
 
 ```
 
+## showing running pods (partial)
+```
+kubectl describe pods -n airflowplus
+```
+```
+Controlled By:  ReplicaSet/airflowplus-5c8648756d
+Containers:
+  docker-airflow:
+    Container ID:   docker://f6fd7c89ff1d9d4c796c6b201e8afd508b5013e3a3b41c2e0d26b361d9c2f764
+    Image:          puckel/docker-airflow:latest
+    Image ID:       docker-pullable://puckel/docker-airflow@sha256:e3012994e4e730dccf56878094ff5524bffbe347e5870832dd6f7636eb0292a4
+    Port:           <none>
+    Host Port:      <none>
+    State:          Running
+      Started:      Sat, 23 Jan 2021 14:07:35 +0200
+    Ready:          True
+    Restart Count:  0
+    Environment:
+      LOAD_EX:  y
+    Mounts:
+      /var/run/secrets/kubernetes.io/serviceaccount from default-token-6qxkj (ro)
+  redis:
+    Container ID:   docker://ea62ea5cbadcfec916a1351987b71d3150aa79432d395e5c189ead5c82dd6611
+    Image:          redis:latest
+    Image ID:       docker-pullable://redis@sha256:0f97c1c9daf5b69b93390ccbe8d3e2971617ec4801fd0882c72bf7cad3a13494
+    Port:           <none>
+    Host Port:      <none>
+    State:          Running
+      Started:      Sat, 23 Jan 2021 14:07:37 +0200
+    Ready:          True
+    Restart Count:  0
+    Environment:
+      LOAD_EX:  y
+    Mounts:
+      /var/run/secrets/kubernetes.io/serviceaccount from default-token-6qxkj (ro)
+  postgres:
+    Container ID:   docker://1de6f2fd14f922aecfcca3145db18257ad6ee2301ed244beee7c3ef30871f286
+    Image:          postgres:latest
+    Image ID:       docker-pullable://postgres@sha256:c32f3f8364d79f71958c9ada74c43c2033d7e13d9d5fc21d3ba89322e6559c9d
+    Port:           <none>
+    Host Port:      <none>
+    State:          Running
+      Started:      Sat, 23 Jan 2021 14:07:40 +0200
+    Ready:          True
+    Restart Count:  0
+    Environment:
+      POSTGRES_HOST_AUTH_METHOD:  trust
+      POSTGRES_PASSWORD:          password
+      LOAD_EX:                    y
+```
+
 ## set LOAD_EX=y into deployment
 ```
 kubectl set env deployment airflowplus LOAD_EX=y -n airflowplus

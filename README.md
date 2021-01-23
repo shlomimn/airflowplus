@@ -81,4 +81,4 @@ deployment.apps/airflowplus scaled
 ```
 
 ## output
-<>
+<img src="./airflowplus-1.jpg">

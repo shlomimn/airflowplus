@@ -6,7 +6,7 @@ kubectl apply -f airflowplus.yml
 kubectl apply -f airflowplus_namespace.yml
 ```
 
-## expose ports for deployment, redis, postgres
+## expose ports for web-server, redis, postgres
 ```
 kubectl expose deployment airflowplus --type NodePort --port 8080,6379,5432 -n airflowplus
 ```
